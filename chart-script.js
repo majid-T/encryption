@@ -42,7 +42,7 @@ var chart = new Chart(ctx, {
         label: "After ciphering",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [1, 100, 200],
+        data: [],
       },
       //   {
       //     label: "After ciphering",
@@ -89,7 +89,6 @@ const showLetterDist = () => {
     0,
     0,
   ];
-  console.log(dis.length);
   for (word of phrase) {
     let index = letters.indexOf(word);
     if (index === -1) {
@@ -101,13 +100,36 @@ const showLetterDist = () => {
   chart.update();
 };
 
+//cyphering the phrase
+const cipherPhrase = (phrase) => {
+  let encyptBy = 5;
+  let encrypted = "";
+  for (word of phrase) {
+    let index = letters.indexOf(word);
+    if (index === -1) {
+      encrypted += word;
+      continue;
+    }
+
+    index += encyptBy;
+
+    if (index > 26) {
+      index -= 26;
+    }
+
+    encrypted += letters[index];
+  }
+
+  console.log(encrypted);
+  document.getElementById("cipheredText").value = encrypted;
+};
+
 //Handling cipher btn click
-const cipher = (e) => {
+const cipher = () => {
   let inputText = document.getElementById("textToCipher").value;
   inputText = inputText.toLowerCase();
 
   //calculate letter distribution on a phrase
-  showLetterDist(inputText);
-
-  console.log(inputText);
+  showLetterDist();
+  cipherPhrase(inputText);
 };
