@@ -2,3 +2,7 @@
   width: 80%;
   border-radius: 5px;
 }
+
+#textToCipher {
+  text-transform: lowercase;
+}
