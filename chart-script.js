@@ -1,3 +1,9 @@
+// TODO:
+// Make key from user input
+// clear chart with new phrase
+// add sample text function
+// resolve the bug on letter x
+
 //App data
 const letters = [
   "a",
@@ -122,7 +128,7 @@ const showLetterDist = (e) => {
 
 //cyphering the phrase
 const cipherPhrase = (phrase) => {
-  let encyptBy = 5;
+  let encryptBy = 3;
   let encrypted = "";
   for (word of phrase) {
     let index = letters.indexOf(word);
@@ -131,9 +137,9 @@ const cipherPhrase = (phrase) => {
       continue;
     }
 
-    index += encyptBy;
+    index += encryptBy;
 
-    if (index > 26) {
+    if (index >= 26) {
       index -= 26;
     }
 
