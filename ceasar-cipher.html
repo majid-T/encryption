@@ -75,7 +75,8 @@
           class="form-control"
           placeholder="Type phrase to Cipher"
           id="textToCipher"
-          onkeyup="showLetterDist()"
+          data-index="0"
+          onkeyup="showLetterDist(event)"
         />
         <!-- <button type="button" class="btn btn-info" onclick="showLetterDist()">
           Count words
@@ -93,6 +94,7 @@
             type="text"
             placeholder="result will be here"
             readonly=""
+            data-index="1"
           />
         </fieldset>
       </div>

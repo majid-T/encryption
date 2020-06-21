@@ -69,9 +69,16 @@ var chart = new Chart(ctx, {
 });
 
 //Passing letter distribuation to chart
-const showLetterDist = () => {
-  let phrase = document.getElementById("textToCipher").value;
-  // let cipherPhrase = document.getElementById("cipheredText").value;
+const showLetterDist = (e) => {
+  let phrase;
+  let index;
+  if (e) {
+    phrase = e.target.value;
+    index = e.target.dataset.index;
+  } else {
+    phrase = document.getElementById("cipheredText").value;
+    index = 1;
+  }
 
   phrase = phrase.toLowerCase();
   let dis = [
@@ -109,7 +116,7 @@ const showLetterDist = () => {
     }
     dis[index] += 1;
   }
-  chart.data.datasets[0].data = dis;
+  chart.data.datasets[index].data = dis;
   chart.update();
 };
 
@@ -141,10 +148,9 @@ const cipher = () => {
   let inputText = document.getElementById("textToCipher").value;
   inputText = inputText.toLowerCase();
 
-  //calculate letter distribution on a phrase
-  showLetterDist();
   let result = cipherPhrase(inputText);
   document.getElementById("cipheredText").value = result;
+  showLetterDist();
 };
 
 //adding event listener
