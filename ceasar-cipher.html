@@ -51,17 +51,35 @@
   </nav>
   <body>
     <div class="container">
-      <h3 class="mt-5">Test bar chart added below</h3>
+      <h1>Ceasar cipher method for Encryption</h1>
+      <p>
+        Ceasar cipher method is a method used by Julius Ceasar, the Roman
+        general to cipher his messages and letters to his officers and allies.
+        He will pick a key or use the the lenght of first word as a key, then
+        shift each letter in the phrase in alphabetic order upwards to generate
+        a new letter. For example letter a with key of 3 will become a + 3
+        resulting to d. Below is a small demonstration of how it works. Also the
+        weakness of ths method was the letter distribution in latin language. A
+        smart enemy general would now that some letters are more common in some
+        languages. for example letters a, o and u or words such as the are more
+        likely to be found in a phrase. By using this technic and counting the
+        difference to original letter and trying out the options this code can
+        be break easily. Below we have also included a small demonstration of
+        the letter distribution.
+      </p>
+      <h3 class="mt-5">This is the ciphering area:</h3>
       <div class="form-group">
+        <h2>How it works</h2>
         <input
           type="text"
           class="form-control"
-          placeholder="Type Text to Cipher"
+          placeholder="Type phrase to Cipher"
           id="textToCipher"
+          onkeyup="showLetterDist()"
         />
-        <button type="button" class="btn btn-info" onclick="showLetterDist()">
+        <!-- <button type="button" class="btn btn-info" onclick="showLetterDist()">
           Count words
-        </button>
+        </button> -->
         <button type="button" class="btn btn-info" onclick="cipher()">
           Cipher words
         </button>

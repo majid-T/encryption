@@ -39,27 +39,40 @@ var chart = new Chart(ctx, {
     labels: letters,
     datasets: [
       {
-        label: "After ciphering",
+        label: "before ciphering",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: [],
       },
-      //   {
-      //     label: "After ciphering",
-      //     backgroundColor: "rgb(0, 99, 132)",
-      //     borderColor: "rgb(255, 99, 132)",
-      //     data: [10, 50, 75],
-      //   },
+      {
+        label: "After ciphering",
+        backgroundColor: "rgb(0, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: [],
+      },
     ],
   },
 
   // Configuration options go here
-  options: {},
+  options: {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+            stepSize: 1,
+          },
+        },
+      ],
+    },
+  },
 });
 
 //Passing letter distribuation to chart
 const showLetterDist = () => {
   let phrase = document.getElementById("textToCipher").value;
+  // let cipherPhrase = document.getElementById("cipheredText").value;
+
   phrase = phrase.toLowerCase();
   let dis = [
     0,
@@ -120,8 +133,7 @@ const cipherPhrase = (phrase) => {
     encrypted += letters[index];
   }
 
-  console.log(encrypted);
-  document.getElementById("cipheredText").value = encrypted;
+  return encrypted;
 };
 
 //Handling cipher btn click
@@ -131,5 +143,8 @@ const cipher = () => {
 
   //calculate letter distribution on a phrase
   showLetterDist();
-  cipherPhrase(inputText);
+  let result = cipherPhrase(inputText);
+  document.getElementById("cipheredText").value = result;
 };
+
+//adding event listener
