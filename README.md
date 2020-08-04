@@ -2,9 +2,14 @@
 
 This is a general site regarding encyption and its related fields.
 
-<p align='center'>
-    ![TBD-logo](./tbd.gif)
-</p>
+ <div align="center" >
+      <img
+        src="./tbd.gif"
+        alt="tbd"
+        width="50%"
+        height="50%"
+      />
+  </div>
 
 Progress so far is visible on this address. [Here](https://majid-t.github.io/encryption)
 This Repo is Under cunstraction!
