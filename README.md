@@ -14,7 +14,7 @@ This is a general site regarding encyption and its related fields.
 Progress so far is visible on this address. [Here](https://majid-t.github.io/encryption)
 This Repo is Under cunstraction!
 
-### Technologies used in this project
+### Technologies and tools used in this project
 
-- [Char.js](https://www.chartjs.org/) - Java script charting tool
+- [Chart.js](https://www.chartjs.org/) - Java script charting tool
 - [Bootstrap](https://getbootstrap.com/) = CSS library for responsive mobile first design
